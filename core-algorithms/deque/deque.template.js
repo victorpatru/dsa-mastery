@@ -16,7 +16,6 @@ class Node {
 class Deque {
     constructor() {
         // TODO: implement
-        // Hint: Use dummy head and tail nodes
     }
 
     /**
