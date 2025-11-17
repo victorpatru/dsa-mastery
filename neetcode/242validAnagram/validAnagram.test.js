@@ -1,5 +1,5 @@
 // Import the solutions
-const { SolutionFrequencyMap, SolutionSorting } = require('./validAnagram.template.js');
+const { SolutionFrequencyMap } = require('./validAnagram.template.js');
 
 // Test helper function
 function runTest(testName, s, t, expected, solution) {
