@@ -22,6 +22,11 @@ class SolutionHashMap {
     }
 }
 
+/**
+ * Time Complexity: O(n)
+ * Space Complexity: O(n)
+ */
+
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { SolutionHashMap };
