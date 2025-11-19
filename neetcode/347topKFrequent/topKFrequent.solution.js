@@ -6,14 +6,22 @@ class Solution {
      * @return {number[]}
      */
     topKFrequent(nums, k) {
+        // 1. Count how many times each number appears
         const count = {};
-        const freq = Array.from({ length: nums.length + 1 }, () => []);
         for (const n of nums) {
             count[n] = (count[n] || 0) + 1;
         }
-        for (const n in count) {
-            freq[count[n]].push(parseInt(n));
+
+        // 2. Create bucket array where index = frequency
+        const freq = Array.from({ length: nums.length + 1 }, () => []);
+
+        // 3. Put each number into the bucket matching its frequency
+        for (const key in count) {
+            freq[count[key]].push(parseInt(key));
         }
+
+        // 4. Traverse buckets from highest frequency downward
+        //    and collect k most frequent numbers
         const res = [];
         for (let i = freq.length - 1; i > 0; i--) {
             for (const n of freq[i]) {
