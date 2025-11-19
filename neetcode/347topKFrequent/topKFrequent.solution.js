@@ -8,8 +8,8 @@ class Solution {
     topKFrequent(nums, k) {
         // 1. Count how many times each number appears
         const count = {};
-        for (const n of nums) {
-            count[n] = (count[n] || 0) + 1;
+        for (const num of nums) {
+            count[num] = (count[num] || 0) + 1;
         }
 
         // 2. Create bucket array where index = frequency
@@ -24,8 +24,8 @@ class Solution {
         //    and collect k most frequent numbers
         const res = [];
         for (let i = freq.length - 1; i > 0; i--) {
-            for (const n of freq[i]) {
-                res.push(n);
+            for (const item of freq[i]) {
+                res.push(item);
                 if (res.length === k) {
                     return res;
                 }
