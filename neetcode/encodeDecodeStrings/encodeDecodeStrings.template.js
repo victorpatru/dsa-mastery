@@ -7,7 +7,7 @@ class Solution {
      * @returns {string}
      */
     encode(strs) {
-        // 1. For each string, append its length followed by '#' delimiter and the string itself
+        // For each string, append its length followed by '#' delimiter and the string itself
     }
 
     /**
@@ -15,11 +15,15 @@ class Solution {
      * @returns {string[]}
      */
     decode(str) {
-        // 1. Parse the encoded string by reading length prefix before each '#'
-        
-        // 2. Extract the string of that length after the '#'
-        
-        // 3. Repeat until the entire encoded string is processed
+        // something to store results
+        // a pointer/index into the string
+
+        // WHILE (/* pointer not at end */)
+        // figure out the length of the next string
+        // use that length to extract the next string
+        // move the pointer forward past what you just processed
+
+        // return the result
     }
 }
 
