@@ -1,5 +1,5 @@
 // Import the solutions
-const { Solution } = require('./encodeDecodeStrings.solution.js');
+const { Solution } = require('./encodeDecodeStrings.template.js');
 
 // Test helper function
 function arraysEqual(arr1, arr2) {
@@ -37,16 +37,16 @@ let failed = 0;
 // Test 1: Example 1 from problem description
 if (runTest(
     'Test 1: example 1',
-    ["neet","code","love","you"],
-    ["neet","code","love","you"],
+    ["neet", "code", "love", "you"],
+    ["neet", "code", "love", "you"],
     solution
 )) passed++; else failed++;
 
 // Test 2: Example 2 from problem description
 if (runTest(
     'Test 2: example 2',
-    ["we","say",":","yes"],
-    ["we","say",":","yes"],
+    ["we", "say", ":", "yes"],
+    ["we", "say", ":", "yes"],
     solution
 )) passed++; else failed++;
 

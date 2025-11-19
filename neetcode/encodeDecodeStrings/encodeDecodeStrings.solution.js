@@ -5,9 +5,9 @@ class Solution {
      * @returns {string}
      */
     encode(strs) {
-        let res = '';
+        let res = "";
         for (let s of strs) {
-            res += s.length + '#' + s;
+            res += s.length + "#" + s;
         }
         return res;
     }
@@ -21,7 +21,7 @@ class Solution {
         let i = 0;
         while (i < str.length) {
             let j = i;
-            while (str[j] !== '#') {
+            while (str[j] !== "#") {
                 j++;
             }
             let length = parseInt(str.substring(i, j));
@@ -41,7 +41,7 @@ class Solution {
  */
 
 // Export for testing
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== "undefined" && module.exports) {
     module.exports = { Solution };
 }
 
