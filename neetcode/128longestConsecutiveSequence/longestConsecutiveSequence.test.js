@@ -82,7 +82,7 @@ if (runTest(
 if (runTest(
     'Test 8: mixed positive and negative',
     [-1, 0, 1, 2, -2],
-    4,
+    5,
     solution
 )) passed++; else failed++;
 
