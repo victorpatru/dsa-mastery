@@ -49,7 +49,7 @@ class SolutionTwoPointers {
             while (l < r && !this.alphaNum(s[l])) {
                 l++;
             }
-            while (r > l && !this.alphaNum(s[r])) {
+            while (l < r && !this.alphaNum(s[r])) {
                 r--;
             }
             if (s[l].toLowerCase() !== s[r].toLowerCase()) {
