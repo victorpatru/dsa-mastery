@@ -1,5 +1,25 @@
 // Import the solutions
-const { SolutionReverseString, SolutionTwoPointers } = require('./validPalindrome.template.js');
+const {
+    SolutionReverseString,
+    SolutionTwoPointers,
+    SOLUTION_REVERSE_STRING_COMPLEXITY,
+    SOLUTION_TWO_POINTERS_COMPLEXITY
+} = require('./validPalindrome.template.js');
+
+// Import shared Big O validation utilities
+const { validateComplexity } = require('../../utils/bigOValidator.js');
+
+// Correct Big O answers for validation
+const CORRECT_COMPLEXITY = {
+    reverseString: {
+        time: 'O(n)', // Due to string concatenation in loop
+        space: 'O(n)'   // For the new string
+    },
+    twoPointers: {
+        time: 'O(n)',   // Single pass through string
+        space: 'O(1)'   // Only using pointers
+    }
+};
 
 // Test helper function
 function runTest(testName, s, expected, solution) {
@@ -291,11 +311,64 @@ const totalPassed = reverseStringPassed + twoPointersPassed;
 const totalFailed = reverseStringFailed + twoPointersFailed;
 console.log(`Overall Tests Passed: ${totalPassed}/${totalPassed + totalFailed}`);
 console.log(`Overall Tests Failed: ${totalFailed}/${totalPassed + totalFailed}`);
-if (totalFailed === 0) {
-    console.log('✓ All tests passed!');
+
+// Big O Complexity Validation
+console.log(`\n${'='.repeat(50)}`);
+console.log('Big O Complexity Validation:\n');
+
+let complexityPassed = 0;
+let complexityTotal = 0;
+
+// Validate SolutionReverseString complexity
+complexityTotal += 2;
+if (validateComplexity(
+    'SolutionReverseString',
+    SOLUTION_REVERSE_STRING_COMPLEXITY.time,
+    CORRECT_COMPLEXITY.reverseString.time,
+    'Time'
+)) complexityPassed++;
+
+if (validateComplexity(
+    'SolutionReverseString',
+    SOLUTION_REVERSE_STRING_COMPLEXITY.space,
+    CORRECT_COMPLEXITY.reverseString.space,
+    'Space'
+)) complexityPassed++;
+
+// Validate SolutionTwoPointers complexity
+complexityTotal += 2;
+if (validateComplexity(
+    'SolutionTwoPointers',
+    SOLUTION_TWO_POINTERS_COMPLEXITY.time,
+    CORRECT_COMPLEXITY.twoPointers.time,
+    'Time'
+)) complexityPassed++;
+
+if (validateComplexity(
+    'SolutionTwoPointers',
+    SOLUTION_TWO_POINTERS_COMPLEXITY.space,
+    CORRECT_COMPLEXITY.twoPointers.space,
+    'Space'
+)) complexityPassed++;
+
+console.log(`\n${'─'.repeat(50)}`);
+console.log(`Big O Complexity: ${complexityPassed}/${complexityTotal} correct`);
+
+// Final Summary
+console.log(`\n${'='.repeat(50)}`);
+console.log('FINAL SUMMARY:');
+console.log(`  Algorithm Tests: ${totalPassed}/${totalPassed + totalFailed} passed`);
+console.log(`  Complexity Analysis: ${complexityPassed}/${complexityTotal} correct`);
+
+const allTestsPassed = totalFailed === 0;
+const allComplexityCorrect = complexityPassed === complexityTotal;
+
+if (allTestsPassed && allComplexityCorrect) {
+    console.log('\n✓ All tests and complexity analysis passed!');
     process.exit(0);
 } else {
-    console.log('✗ Some tests failed');
+    if (!allTestsPassed) console.log('✗ Some algorithm tests failed');
+    if (!allComplexityCorrect) console.log('✗ Some complexity answers are incorrect');
     process.exit(1);
 }
 

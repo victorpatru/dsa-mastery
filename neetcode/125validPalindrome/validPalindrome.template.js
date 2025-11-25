@@ -47,9 +47,12 @@ class SolutionReverseString {
 }
 
 /**
- * Time Complexity: TODO:
- * Space Complexity: TODO:
+ * TODO: Fill in your Big O analysis below
  */
+const SOLUTION_REVERSE_STRING_COMPLEXITY = {
+    time: '',
+    space: ''
+};
 
 /**
  * Solution 2: Two Pointers approach
@@ -73,12 +76,20 @@ class SolutionTwoPointers {
 }
 
 /**
- * Time Complexity: TODO:
- * Space Complexity: TODO:
+ * TODO: Fill in your Big O analysis below
  */
+const SOLUTION_TWO_POINTERS_COMPLEXITY = {
+    time: '',
+    space: ''
+};
 
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { SolutionReverseString, SolutionTwoPointers };
+    module.exports = {
+        SolutionReverseString,
+        SolutionTwoPointers,
+        SOLUTION_REVERSE_STRING_COMPLEXITY,
+        SOLUTION_TWO_POINTERS_COMPLEXITY
+    };
 }
 
