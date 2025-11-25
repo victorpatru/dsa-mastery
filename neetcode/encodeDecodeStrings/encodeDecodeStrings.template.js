@@ -31,7 +31,7 @@ class Solution {
      * @returns {string}
      */
     encode(strs) {
-        // For each string, append its length followed by '#' delimiter and the string itself
+        // TODO: Implement
     }
 
     /**
@@ -39,15 +39,7 @@ class Solution {
      * @returns {string[]}
      */
     decode(str) {
-        // something to store results
-        // a pointer/index into the string
-
-        // WHILE (/* pointer not at end */)
-        // figure out the length of the next string
-        // use that length to extract the next string
-        // move the pointer forward past what you just processed
-
-        // return the result
+        // TODO: Implement
     }
 }
 
