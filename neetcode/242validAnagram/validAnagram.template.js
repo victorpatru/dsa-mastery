@@ -34,12 +34,15 @@ class SolutionFrequencyMap {
 }
 
 /**
- * Time Complexity: TODO:
- * Space Complexity: TODO:
+ * TODO: Fill in your Big O analysis below
  */
+const SOLUTION_FREQUENCY_MAP_COMPLEXITY = {
+    time: '',
+    space: ''
+};
 
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { SolutionFrequencyMap };
+    module.exports = { SolutionFrequencyMap, SOLUTION_FREQUENCY_MAP_COMPLEXITY };
 }
 

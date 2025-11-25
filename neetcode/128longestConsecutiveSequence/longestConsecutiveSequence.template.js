@@ -39,12 +39,15 @@ class Solution {
 }
 
 /**
- * Time Complexity: TODO:
- * Space Complexity: TODO:
+ * TODO: Fill in your Big O analysis below
  */
+const SOLUTION_COMPLEXITY = {
+    time: '',
+    space: ''
+};
 
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { Solution };
+    module.exports = { Solution, SOLUTION_COMPLEXITY };
 }
 

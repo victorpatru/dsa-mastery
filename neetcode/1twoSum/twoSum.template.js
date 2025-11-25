@@ -44,12 +44,15 @@ class SolutionHashMap {
 }
 
 /**
- * Time Complexity: TODO:
- * Space Complexity: TODO:
+ * TODO: Fill in your Big O analysis below
  */
+const SOLUTION_HASH_MAP_COMPLEXITY = {
+    time: '',
+    space: ''
+};
 
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { SolutionHashMap };
+    module.exports = { SolutionHashMap, SOLUTION_HASH_MAP_COMPLEXITY };
 }
 

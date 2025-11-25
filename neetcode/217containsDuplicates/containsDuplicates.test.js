@@ -1,5 +1,25 @@
 // Import the solutions
-const { SolutionHashSet, SolutionHashSetLength } = require('./containsDuplicates.template.js');
+const { 
+    SolutionHashSet, 
+    SolutionHashSetLength,
+    SOLUTION_HASH_SET_COMPLEXITY,
+    SOLUTION_HASH_SET_LENGTH_COMPLEXITY
+} = require('./containsDuplicates.template.js');
+
+// Import shared Big O validation utilities
+const { validateComplexity } = require('../../utils/bigOValidator.js');
+
+// Correct Big O answers for validation
+const CORRECT_COMPLEXITY = {
+    hashSet: {
+        time: 'O(n)',
+        space: 'O(n)'
+    },
+    hashSetLength: {
+        time: 'O(n)',
+        space: 'O(n)'
+    }
+};
 
 // Test helper function
 function runTest(testName, input, expected, solution) {
@@ -275,11 +295,64 @@ const totalFailed = hashSetFailed + hashSetLengthFailed;
 console.log(`\n${'='.repeat(50)}`);
 console.log(`Overall Tests Passed: ${totalPassed}/${totalPassed + totalFailed}`);
 console.log(`Overall Tests Failed: ${totalFailed}/${totalPassed + totalFailed}`);
-if (totalFailed === 0) {
-    console.log('✓ All tests passed!');
+
+// Big O Complexity Validation
+console.log(`\n${'='.repeat(50)}`);
+console.log('Big O Complexity Validation:\n');
+
+let complexityPassed = 0;
+let complexityTotal = 0;
+
+// Validate SolutionHashSet complexity
+complexityTotal += 2;
+if (validateComplexity(
+    'SolutionHashSet',
+    SOLUTION_HASH_SET_COMPLEXITY.time,
+    CORRECT_COMPLEXITY.hashSet.time,
+    'Time'
+)) complexityPassed++;
+
+if (validateComplexity(
+    'SolutionHashSet',
+    SOLUTION_HASH_SET_COMPLEXITY.space,
+    CORRECT_COMPLEXITY.hashSet.space,
+    'Space'
+)) complexityPassed++;
+
+// Validate SolutionHashSetLength complexity
+complexityTotal += 2;
+if (validateComplexity(
+    'SolutionHashSetLength',
+    SOLUTION_HASH_SET_LENGTH_COMPLEXITY.time,
+    CORRECT_COMPLEXITY.hashSetLength.time,
+    'Time'
+)) complexityPassed++;
+
+if (validateComplexity(
+    'SolutionHashSetLength',
+    SOLUTION_HASH_SET_LENGTH_COMPLEXITY.space,
+    CORRECT_COMPLEXITY.hashSetLength.space,
+    'Space'
+)) complexityPassed++;
+
+console.log(`\n${'─'.repeat(50)}`);
+console.log(`Big O Complexity: ${complexityPassed}/${complexityTotal} correct`);
+
+// Final Summary
+console.log(`\n${'='.repeat(50)}`);
+console.log('FINAL SUMMARY:');
+console.log(`  Algorithm Tests: ${totalPassed}/${totalPassed + totalFailed} passed`);
+console.log(`  Complexity Analysis: ${complexityPassed}/${complexityTotal} correct`);
+
+const allTestsPassed = totalFailed === 0;
+const allComplexityCorrect = complexityPassed === complexityTotal;
+
+if (allTestsPassed && allComplexityCorrect) {
+    console.log('\n✓ All tests and complexity analysis passed!');
     process.exit(0);
 } else {
-    console.log('✗ Some tests failed');
+    if (!allTestsPassed) console.log('✗ Some algorithm tests failed');
+    if (!allComplexityCorrect) console.log('✗ Some complexity answers are incorrect');
     process.exit(1);
 }
 

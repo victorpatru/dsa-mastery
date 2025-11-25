@@ -11,9 +11,12 @@ class SolutionHashSet {
     }
 }
 /**
- * Time Complexity: TODO:
- * Space Complexity: TODO:
+ * TODO: Fill in your Big O analysis below
  */
+const SOLUTION_HASH_SET_COMPLEXITY = {
+    time: '',
+    space: ''
+};
 
 /**
  * Solution 2: Using hash set length comparison
@@ -29,12 +32,20 @@ class SolutionHashSetLength {
 }
 
 /**
- * Time Complexity: TODO:
- * Space Complexity: TODO:
+ * TODO: Fill in your Big O analysis below
  */
+const SOLUTION_HASH_SET_LENGTH_COMPLEXITY = {
+    time: '',
+    space: ''
+};
 
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { SolutionHashSet, SolutionHashSetLength };
+    module.exports = { 
+        SolutionHashSet, 
+        SolutionHashSetLength,
+        SOLUTION_HASH_SET_COMPLEXITY,
+        SOLUTION_HASH_SET_LENGTH_COMPLEXITY
+    };
 }
 

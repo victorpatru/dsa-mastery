@@ -1,5 +1,16 @@
 // Import the solutions
-const { Solution } = require('./topKFrequent.template.js');
+const { Solution, SOLUTION_COMPLEXITY } = require('./topKFrequent.template.js');
+
+// Import shared Big O validation utilities
+const { validateComplexity } = require('../../utils/bigOValidator.js');
+
+// Correct Big O answers for validation
+const CORRECT_COMPLEXITY = {
+    solution: {
+        time: 'O(n)',
+        space: 'O(n)'
+    }
+};
 
 // Test helper function
 function arraysEqual(arr1, arr2) {
@@ -138,11 +149,48 @@ if (runTest(
 console.log(`\n${'='.repeat(50)}`);
 console.log(`Tests Passed: ${passed}/${passed + failed}`);
 console.log(`Tests Failed: ${failed}/${passed + failed}`);
-if (failed === 0) {
-    console.log('✓ All tests passed!');
+
+// Big O Complexity Validation
+console.log(`\n${'='.repeat(50)}`);
+console.log('Big O Complexity Validation:\n');
+
+let complexityPassed = 0;
+let complexityTotal = 0;
+
+// Validate Solution complexity
+complexityTotal += 2;
+if (validateComplexity(
+    'Solution',
+    SOLUTION_COMPLEXITY.time,
+    CORRECT_COMPLEXITY.solution.time,
+    'Time'
+)) complexityPassed++;
+
+if (validateComplexity(
+    'Solution',
+    SOLUTION_COMPLEXITY.space,
+    CORRECT_COMPLEXITY.solution.space,
+    'Space'
+)) complexityPassed++;
+
+console.log(`\n${'─'.repeat(50)}`);
+console.log(`Big O Complexity: ${complexityPassed}/${complexityTotal} correct`);
+
+// Final Summary
+console.log(`\n${'='.repeat(50)}`);
+console.log('FINAL SUMMARY:');
+console.log(`  Algorithm Tests: ${passed}/${passed + failed} passed`);
+console.log(`  Complexity Analysis: ${complexityPassed}/${complexityTotal} correct`);
+
+const allTestsPassed = failed === 0;
+const allComplexityCorrect = complexityPassed === complexityTotal;
+
+if (allTestsPassed && allComplexityCorrect) {
+    console.log('\n✓ All tests and complexity analysis passed!');
     process.exit(0);
 } else {
-    console.log('✗ Some tests failed');
+    if (!allTestsPassed) console.log('✗ Some algorithm tests failed');
+    if (!allComplexityCorrect) console.log('✗ Some complexity answers are incorrect');
     process.exit(1);
 }
 

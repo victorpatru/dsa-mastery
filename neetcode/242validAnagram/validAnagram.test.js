@@ -1,5 +1,16 @@
 // Import the solutions
-const { SolutionFrequencyMap } = require('./validAnagram.template.js');
+const { SolutionFrequencyMap, SOLUTION_FREQUENCY_MAP_COMPLEXITY } = require('./validAnagram.template.js');
+
+// Import shared Big O validation utilities
+const { validateComplexity } = require('../../utils/bigOValidator.js');
+
+// Correct Big O answers for validation
+const CORRECT_COMPLEXITY = {
+    frequencyMap: {
+        time: 'O(n)',
+        space: 'O(n)'
+    }
+};
 
 // Test helper function
 function runTest(testName, s, t, expected, solution) {
@@ -161,11 +172,48 @@ console.log(`SolutionFrequencyMap Tests Failed: ${frequencyMapFailed}/${frequenc
 console.log(`\n${'='.repeat(50)}`);
 console.log(`Overall Tests Passed: ${frequencyMapPassed}/${frequencyMapPassed + frequencyMapFailed}`);
 console.log(`Overall Tests Failed: ${frequencyMapFailed}/${frequencyMapPassed + frequencyMapFailed}`);
-if (frequencyMapFailed === 0) {
-    console.log('✓ All tests passed!');
+
+// Big O Complexity Validation
+console.log(`\n${'='.repeat(50)}`);
+console.log('Big O Complexity Validation:\n');
+
+let complexityPassed = 0;
+let complexityTotal = 0;
+
+// Validate SolutionFrequencyMap complexity
+complexityTotal += 2;
+if (validateComplexity(
+    'SolutionFrequencyMap',
+    SOLUTION_FREQUENCY_MAP_COMPLEXITY.time,
+    CORRECT_COMPLEXITY.frequencyMap.time,
+    'Time'
+)) complexityPassed++;
+
+if (validateComplexity(
+    'SolutionFrequencyMap',
+    SOLUTION_FREQUENCY_MAP_COMPLEXITY.space,
+    CORRECT_COMPLEXITY.frequencyMap.space,
+    'Space'
+)) complexityPassed++;
+
+console.log(`\n${'─'.repeat(50)}`);
+console.log(`Big O Complexity: ${complexityPassed}/${complexityTotal} correct`);
+
+// Final Summary
+console.log(`\n${'='.repeat(50)}`);
+console.log('FINAL SUMMARY:');
+console.log(`  Algorithm Tests: ${frequencyMapPassed}/${frequencyMapPassed + frequencyMapFailed} passed`);
+console.log(`  Complexity Analysis: ${complexityPassed}/${complexityTotal} correct`);
+
+const allTestsPassed = frequencyMapFailed === 0;
+const allComplexityCorrect = complexityPassed === complexityTotal;
+
+if (allTestsPassed && allComplexityCorrect) {
+    console.log('\n✓ All tests and complexity analysis passed!');
     process.exit(0);
 } else {
-    console.log('✗ Some tests failed');
+    if (!allTestsPassed) console.log('✗ Some algorithm tests failed');
+    if (!allComplexityCorrect) console.log('✗ Some complexity answers are incorrect');
     process.exit(1);
 }
 
