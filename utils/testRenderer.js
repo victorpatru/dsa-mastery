@@ -201,11 +201,19 @@ async function renderTestResults(config) {
         // Auto-unmount after a brief delay to ensure rendering completes
         setTimeout(() => {
             unmount();
+            // Add a newline to prevent shell prompt from appearing on same line
+            process.stdout.write('\n');
             resolve();
         }, 100);
         
         // Also resolve when user exits (Ctrl+C)
-        waitUntilExit().then(() => resolve()).catch(() => resolve());
+        waitUntilExit().then(() => {
+            process.stdout.write('\n');
+            resolve();
+        }).catch(() => {
+            process.stdout.write('\n');
+            resolve();
+        });
     });
 }
 
