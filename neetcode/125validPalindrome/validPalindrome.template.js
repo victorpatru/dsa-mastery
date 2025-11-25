@@ -30,10 +30,10 @@
 class SolutionReverseString {
     /**
      * Check if a character is alphanumeric
-     * @param {char} char
+     * @param {char} c
      * @return {boolean}
      */
-    isAlphanumeric(char) {
+    isAlphanumeric(c) {
         // TODO: Implement
     }
 
@@ -67,7 +67,7 @@ class SolutionTwoPointers {
      * @param {char} c
      * @return {boolean}
      */
-    alphaNum(c) {
+    isAlphanumeric(c) {
         // TODO: Implement
     }
 }
