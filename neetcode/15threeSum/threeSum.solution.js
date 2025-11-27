@@ -45,6 +45,33 @@ class Solution {
  *                   O (m) space for the output list.
  */
 
+/**
+ * 
+ * while (l < r && nums[l] === nums[l - 1]) {
+        l++;
+    }
+    Your understanding is **correct**, and you summarized it well.
+
+    Concise confirmation:
+
+    ### ✔ What the inner `while` does (2 things)
+
+    1. **Prevents duplicate triplets**
+    By skipping all duplicate `nums[l]` values after a match, it ensures we never build the same value-triplet again.
+
+    2. **Saves extra work**
+    It jumps over redundant values immediately, instead of letting the main loop recompute sums with the same `l` value multiple times.
+
+    ### ✔ Your interpretation is right
+
+    * Yes: skipping left-pointer duplicates avoids generating repeated results.
+    * Yes: it also avoids unnecessary pointer movements and sum checks.
+    * Yes: the “twofold” effect you described is exactly what this loop achieves.
+
+    You're on point.
+
+ */
+
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { Solution };
