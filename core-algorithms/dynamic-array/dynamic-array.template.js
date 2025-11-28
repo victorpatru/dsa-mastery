@@ -20,6 +20,7 @@
  * - int getCapacity() will return the capacity of the array.
  * 
  * Note: If we call void pushback(int n) but the array is full, we should resize the array first.
+ * Note: Don't forget to fill the arrays with 0
  */
 class DynamicArray {
     /**
