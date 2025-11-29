@@ -1,5 +1,5 @@
 // Import the solutions
-const { Solution, SOLUTION_COMPLEXITY } = require('./trappingRainWater.solution.js');
+const { Solution, SOLUTION_COMPLEXITY } = require('./trappingRainWater.template.js');
 
 // Import shared Big O validation utilities
 const { validateComplexityResult } = require('../../utils/bigOValidator.js');
