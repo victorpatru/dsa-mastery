@@ -10,7 +10,7 @@ class Solution {
         const stack = []; // stack of indices
 
         for (let i = 0; i < n; i++) {
-            while (stack.length && temps[i] > temps[stack.at(-1)]) {
+            while (stack.length > 0 && temps[i] > temps[stack.at(-1)]) {
                 const j = stack.pop();
                 res[j] = i - j;
             }
