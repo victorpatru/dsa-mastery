@@ -5,11 +5,10 @@ class Solution {
      * @return {number[]}
      */
     dailyTemperatures(temps) {
-        const n = temps.length;
-        const res = Array(n).fill(0);
+        const res = Array(temps.length).fill(0);
         const stack = []; // stack of indices
 
-        for (let i = 0; i < n; i++) {
+        for (let i = 0; i < temps.length; i++) {
             while (stack.length > 0 && temps[i] > temps[stack.at(-1)]) {
                 const j = stack.pop();
                 res[j] = i - j;
