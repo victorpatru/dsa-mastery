@@ -29,9 +29,9 @@
  * The index int i provided to get(int i) and remove(int i) is guaranteed to be greater than or equal to 0.
  */
 class ListNode {
-    constructor(value, nextNode = null) {
-        this.value = value
-        // TODO: implement
+    constructor(val, nextNode = null) {
+        this.val = val
+        this.next = nextNode
     }
 }
 
@@ -49,18 +49,18 @@ class LinkedList {
     }
 
     /**
-     * @param {number} value
+     * @param {number} val
      * @return {void}
      */
-    insertHead(value) {
+    insertHead(val) {
         // TODO: implement
     }
 
     /**
-     * @param {number} value
+     * @param {number} val
      * @return {void}
      */
-    insertTail(value) {
+    insertTail(val) {
         // TODO: implement
     }
 
