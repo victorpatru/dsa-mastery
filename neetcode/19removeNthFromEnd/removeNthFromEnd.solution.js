@@ -15,7 +15,7 @@ class Solution {
      * @return {ListNode}
      */
     removeNthFromEnd(head, n) {
-        const dummyHead = new ListNode(0, head);
+        const dummyHead = new ListNode(-1, head);
         let slow = dummyHead;
         let fast = head;
 
