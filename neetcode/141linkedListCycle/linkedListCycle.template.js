@@ -28,8 +28,6 @@
  * - -1000 <= Node.val <= 1000
  * - index is -1 or a valid index in the linked list
  * 
- * Solution Using Floyd's cycle detection algorithm (tortoise and hare)
- * Hint: Use two pointers moving at different speeds - if there's a cycle, they will eventually meet
  */
 
 /**
