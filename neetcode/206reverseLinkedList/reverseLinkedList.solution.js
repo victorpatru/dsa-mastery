@@ -15,15 +15,16 @@ class Solution {
      * @return {ListNode}
      */
     reverseList(head) {
-        let prev = null, curr = head;
+        let reversed = null, remaining = head;
 
-        while (curr) {
-            let temp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = temp;
+        while (remaining) {
+            const nextRemaining = remaining.next
+            remaining.next = reversed
+            reversed = remaining
+            remaining = nextRemaining
         }
-        return prev;
+
+        return reversed;
     }
 }
 
