@@ -20,10 +20,7 @@
  * @constraints
  * - 1 <= heights.length <= 1000
  * - 0 <= heights[i] <= 1000
- * 
- * Solution Using stack approach
- * Hint: Use a stack to track indices and heights. When encountering a bar shorter than the top
- * of the stack, calculate the area of rectangles ending at that position.
+ *
  */
 
 class Solution {
@@ -32,7 +29,7 @@ class Solution {
      * @return {number}
      */
     largestRectangleArea(heights) {
-        // TODO: implement
+
     }
 }
 
