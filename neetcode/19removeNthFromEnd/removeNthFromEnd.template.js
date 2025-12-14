@@ -29,11 +29,6 @@
  * - 0 <= Node.val <= 100
  * - 1 <= n <= sz
  *
- * Solution approach:
- * Use two pointers technique: advance one pointer n steps ahead, then move both pointers
- * until the leading pointer reaches the end. The trailing pointer will be at the node
- * before the one to remove. Use a dummy node to handle edge cases like removing the head.
- */
 
 /**
  * Definition for singly-linked list.
