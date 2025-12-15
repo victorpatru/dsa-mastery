@@ -54,7 +54,7 @@ class LRUCache {
      * @param {number} capacity
      */
     constructor(capacity) {
-
+        // TODO: Implement
     }
 
     /**
@@ -62,7 +62,7 @@ class LRUCache {
      * @return {number}
      */
     get(key) {
-
+        // TODO: Implement
     }
 
     /**
@@ -71,7 +71,7 @@ class LRUCache {
      * @return {void}
      */
     put(key, value) {
-
+        // TODO: Implement
     }
 }
 
