@@ -13,8 +13,8 @@ class Solution {
      * @return {ListNode}
      */
     addTwoNumbers(l1, l2) {
-        const dummy = new ListNode();
-        let curr = dummy;
+        const dummyHead = new ListNode();
+        let curr = dummyHead;
 
         let carry = 0;
         while (l1 || l2 || carry) {
@@ -31,7 +31,7 @@ class Solution {
             l2 = l2 ? l2.next : null;
         }
 
-        return dummy.next;
+        return dummyHead.next;
     }
 }
 
