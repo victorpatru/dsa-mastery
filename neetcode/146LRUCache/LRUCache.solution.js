@@ -17,9 +17,9 @@ class LRUCache {
      * @param {number} capacity
      */
     constructor(capacity) {
-        this.cap = capacity;
+        this.capacity = capacity;
         this.cache = new Map(); // key -> Node
-        
+
         // Dummy head and tail for easier list manipulation
         this.left = new Node(0, 0);  // LRU side
         this.right = new Node(0, 0); // Most recent side
@@ -32,10 +32,10 @@ class LRUCache {
      * @param {Node} node
      */
     remove(node) {
-        const prev = node.prev;
-        const nxt = node.next;
-        prev.next = nxt;
-        nxt.prev = prev;
+        const prevNode = node.prev;
+        const nextNode = node.next;
+        prevNode.next = nextNode;
+        nextNode.prev = prevNode;
     }
 
     /**
@@ -43,9 +43,9 @@ class LRUCache {
      * @param {Node} node
      */
     insert(node) {
-        const prev = this.right.prev;
-        prev.next = node;
-        node.prev = prev;
+        const prevNode = this.right.prev;
+        prevNode.next = node;
+        node.prev = prevNode;
         node.next = this.right;
         this.right.prev = node;
     }
@@ -75,14 +75,14 @@ class LRUCache {
             // Remove old node
             this.remove(this.cache.get(key));
         }
-        
+
         // Insert new node
         const newNode = new Node(key, value);
         this.cache.set(key, newNode);
         this.insert(newNode);
 
         // Check capacity and evict LRU if needed
-        if (this.cache.size > this.cap) {
+        if (this.cache.size > this.capacity) {
             const lru = this.left.next;
             this.remove(lru);
             this.cache.delete(lru.key);
