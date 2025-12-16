@@ -24,9 +24,6 @@
  * - 0 <= The length of the each list <= 100
  * - -100 <= Node.val <= 100
  * 
- * Solution Using dummy node approach
- * Hint: Use a dummy node to simplify edge cases, then compare values from both lists
- * and merge them in sorted order
  */
 
 /**
