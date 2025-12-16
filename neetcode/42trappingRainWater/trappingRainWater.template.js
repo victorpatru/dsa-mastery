@@ -15,8 +15,6 @@
  * - 1 <= height.length <= 1000
  * - 0 <= height[i] <= 1000
  * 
- * Solution Using two-pointer approach
- * Hint: Use two pointers from both ends, track the maximum height on each side
  */
 
 class Solution {
