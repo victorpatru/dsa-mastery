@@ -26,7 +26,6 @@
  * - 0 <= nums.length <= 1000
  * - -10^9 <= nums[i] <= 10^9
  *
- * Solution: Using hash set to find sequence starts
  */
 class Solution {
     /**
