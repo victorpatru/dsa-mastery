@@ -32,10 +32,6 @@
  * - 1 <= Length of the list <= 1000
  * - 1 <= Node.val <= 1000
  *
- * Solution approach:
- * 1. Find the middle of the list using slow/fast pointers
- * 2. Reverse the second half of the list
- * 3. Merge the first half with the reversed second half alternately
  */
 
 /**
