@@ -28,10 +28,6 @@
  * - 0 <= lists[i].length <= 100
  * - -1000 <= lists[i][j] <= 1000
  *
- * Solution approach:
- * 1. Use a divide-and-conquer approach (merge pairs of lists)
- * 2. Repeatedly merge pairs of lists until only one list remains
- * 3. Each merge operation uses the standard merge two sorted lists algorithm
  */
 
 /**
@@ -50,16 +46,6 @@ class Solution {
      * @return {ListNode}
      */
     mergeKLists(lists) {
-        // TODO: implement
-    }
-
-    /**
-     * Helper function to merge two sorted linked lists
-     * @param {ListNode} l1
-     * @param {ListNode} l2
-     * @return {ListNode}
-     */
-    mergeList(l1, l2) {
         // TODO: implement
     }
 }
