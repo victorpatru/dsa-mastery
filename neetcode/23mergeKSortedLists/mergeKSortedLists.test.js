@@ -8,7 +8,7 @@ const { renderTestResults } = require('../../utils/testRenderer.js');
 // Correct Big O answers for validation
 const CORRECT_COMPLEXITY = {
     solution: {
-        time: 'O(nlog(k))', // n = total nodes, k = number of lists
+        time: 'O(nlogk)', // n = total nodes, k = number of lists
         space: 'O(k)'  // space for mergedLists array
     }
 };
