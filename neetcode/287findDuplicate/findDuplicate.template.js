@@ -6,7 +6,9 @@
  *
  * Every integer appears exactly once, except for one integer which appears 
  * two or more times. Return the integer that appears more than once.
- *
+ 
+ * Can you solve the problem without modifying the array nums and using O(1) extra space?
+
  * @example
  * // Example 1:
  * // Input: nums = [1,2,3,2,2]
@@ -21,8 +23,6 @@
  * - nums.length == n + 1
  * - 1 <= nums[i] <= n
  *
- * @followup
- * - Can you solve the problem without modifying the array nums and using O(1) extra space?
  */
 
 class Solution {
@@ -31,7 +31,7 @@ class Solution {
      * @return {number}
      */
     findDuplicate(nums) {
-        // TODO: Implement
+
     }
 }
 
