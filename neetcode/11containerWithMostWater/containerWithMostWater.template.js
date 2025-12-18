@@ -9,13 +9,14 @@
  *
  * @example
  * // Example 1:
- * // Input: height = [1,7,2,5,4,7,3,6]
- * // Output: 36
+ * // Input: height = [1,8,6,2,5,4,8,3,7]
+ * // Output: 49
+ * // Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
  *
  * @example
  * // Example 2:
- * // Input: height = [2,2,2]
- * // Output: 4
+ * // Input: height = [1,1]
+ * // Output: 1
  *
  * @constraints
  * - 2 <= height.length <= 1000
