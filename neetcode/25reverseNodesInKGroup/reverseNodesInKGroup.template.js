@@ -48,16 +48,6 @@ class Solution {
     reverseKGroup(head, k) {
         // TODO: Implement
     }
-
-    /**
-     * Helper function to get the kth node from current position
-     * @param {ListNode} curr
-     * @param {number} k
-     * @return {ListNode}
-     */
-    getKth(curr, k) {
-        // TODO: Implement
-    }
 }
 
 /**
