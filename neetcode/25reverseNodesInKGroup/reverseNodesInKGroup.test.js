@@ -16,15 +16,15 @@ const CORRECT_COMPLEXITY = {
 // Helper function to create a linked list from an array
 function createLinkedList(arr) {
     if (!arr || arr.length === 0) return null;
-    
+
     const head = new ListNode(arr[0]);
     let current = head;
-    
+
     for (let i = 1; i < arr.length; i++) {
         current.next = new ListNode(arr[i]);
         current = current.next;
     }
-    
+
     return head;
 }
 
@@ -32,12 +32,12 @@ function createLinkedList(arr) {
 function linkedListToArray(head) {
     const result = [];
     let current = head;
-    
+
     while (current) {
         result.push(current.val);
         current = current.next;
     }
-    
+
     return result;
 }
 
@@ -54,13 +54,13 @@ function arraysEqual(arr1, arr2) {
 function runTest(testName, arr, k, expected, solution) {
     let result, passed;
     let error = null;
-    
+
     try {
         const head = createLinkedList(arr);
         const resultHead = solution.reverseKGroup(head, k);
         result = linkedListToArray(resultHead);
         passed = arraysEqual(result, expected);
-        
+
         if (!passed) {
             error = {
                 Input: { list: arr, k: k },
@@ -77,7 +77,7 @@ function runTest(testName, arr, k, expected, solution) {
             Stack: e.stack
         };
     }
-    
+
     return {
         name: testName,
         passed,
@@ -182,7 +182,7 @@ async function main() {
 
     // Big O Complexity Validation
     const complexityValidations = [];
-    
+
     complexityValidations.push(validateComplexityResult(
         'Solution',
         SOLUTION_COMPLEXITY.time,

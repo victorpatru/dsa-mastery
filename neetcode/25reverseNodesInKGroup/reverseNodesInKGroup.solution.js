@@ -15,8 +15,8 @@ class Solution {
      * @return {ListNode}
      */
     reverseKGroup(head, k) {
-        const dummy = new ListNode(0, head);
-        let groupPrev = dummy;
+        const dummyHead = new ListNode(0, head);
+        let groupPrev = dummyHead;
 
         while (true) {
             const kth = this.getKth(groupPrev, k);
@@ -26,7 +26,7 @@ class Solution {
             const groupNext = kth.next;
 
             // Reverse group
-            let prev = kth.next;
+            let prev = groupNext;
             let curr = groupPrev.next;
             while (curr !== groupNext) {
                 const tmp = curr.next;
@@ -39,7 +39,7 @@ class Solution {
             groupPrev.next = kth;
             groupPrev = tmp;
         }
-        return dummy.next;
+        return dummyHead.next;
     }
 
     /**
@@ -62,8 +62,13 @@ class Solution {
  * Space Complexity: O(1) - Only using constant extra space
  */
 
+const SOLUTION_COMPLEXITY = {
+    time: 'O(n)',
+    space: 'O(1)'
+};
+
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { Solution, ListNode };
+    module.exports = { Solution, ListNode, SOLUTION_COMPLEXITY };
 }
 
