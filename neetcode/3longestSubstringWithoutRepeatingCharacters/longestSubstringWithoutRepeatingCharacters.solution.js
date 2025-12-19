@@ -30,7 +30,7 @@ class Solution {
 
 const SOLUTION_COMPLEXITY = {
     time: 'O(n)',
-    space: 'O(m)'
+    space: 'O(min(n,set))'
 };
 
 // Export for testing
