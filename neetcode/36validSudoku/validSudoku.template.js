@@ -47,7 +47,6 @@
  * - board[i].length == 9
  * - board[i][j] is a digit 1-9 or '.'.
  *
- * Solution: Using hash sets for rows, columns, and squares
  */
 class Solution {
     /**
