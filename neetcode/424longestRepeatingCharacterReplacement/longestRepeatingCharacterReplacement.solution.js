@@ -16,7 +16,7 @@ class Solution {
             // This means we need more than k replacements
             while ((r - l + 1) - Math.max(...Object.values(count)) > k) {
                 count[s[l]] -= 1;
-                l += 1;
+                l++;
             }
 
             res = Math.max(res, r - l + 1);
