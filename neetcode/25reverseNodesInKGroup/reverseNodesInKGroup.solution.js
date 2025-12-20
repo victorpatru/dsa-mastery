@@ -35,7 +35,7 @@ class Solution {
                 curr = tmp;
             }
 
-            // Connect reversed group back to list and move groupPrev to end of reversed group
+            // Links the reversed group back into the list and advances groupPrev to the end of that group for the next iteration.
             const tmp = groupPrev.next;
             groupPrev.next = kth;
             groupPrev = tmp;
