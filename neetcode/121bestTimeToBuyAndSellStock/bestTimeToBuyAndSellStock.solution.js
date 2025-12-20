@@ -2,13 +2,13 @@
 class Solution {
     maxProfit(prices) {
         let l = 0, r = 1;
-        let maxP = 0;
+        let maxProfit = 0;
 
         while (r < prices.length) {
-            const profit = prices[r] - prices[l];
+            const currentProfit = prices[r] - prices[l];
 
-            if (profit > 0) {
-                maxP = Math.max(maxP, profit);
+            if (currentProfit > 0) {
+                maxProfit = Math.max(maxProfit, currentProfit);
             } else {
                 l = r;
             }
@@ -16,7 +16,7 @@ class Solution {
             r++;
         }
 
-        return maxP;
+        return maxProfit;
     }
 }
 
