@@ -25,7 +25,7 @@ class Solution {
             }
 
             // Once window size is reached, record the max
-            if (r + 1 >= k) {
+            if (r - k + 1 >= 0) {
                 output[l] = nums[queue.front()];
                 l++;
             }
