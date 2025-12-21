@@ -1,3 +1,5 @@
+const { Deque } = require('../../helpers/Deque.js');
+
 /**
  * Sliding Window Maximum
  *
