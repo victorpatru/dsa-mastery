@@ -8,7 +8,7 @@ const { renderTestResults } = require('../../utils/testRenderer.js');
 // Correct Big O answers for validation
 const CORRECT_COMPLEXITY = {
     solution: {
-        time: 'O(n + m)', // n = length of list1, m = length of list2
+        time: 'O(n+m)', // n = length of list1, m = length of list2
         space: 'O(1)'  // constant extra space
     }
 };
