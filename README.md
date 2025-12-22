@@ -53,3 +53,24 @@ This workflow ensures you master both the algorithmic implementation and the the
 - [Neetcode DSA for Begineers](https://neetcode.io/courses/dsa-for-beginners/0)
 - [Neetcode Core Algorithm Implementation](https://neetcode.io/practice?subpage=practice)
 - [Neetcode Roadmap](https://neetcode.io/roadmap)
+
+
+# Method for structuring your DSA answers
+When talking through a whiteboard problem or a coding challenge with an interviewer you should use the PREP method. Going through this will help you engage with the interviewer (and possibly burn up some time 😉)
+
+- **Parameters**
+    - Inputs
+    - Ask questions
+        - Will it always be a number?
+        - Will it ever be negative?
+        - Any gotchas?
+- **Returns**
+    - Ask questions
+        - Do you want it returned or is a console.log better?
+        - Should I pass a whole array of solutions back or just a single solution?
+- **Examples**
+    - Show a couple black box examples, aka test cases
+        - I pass in these arguments and get these results, is that correct?
+    - Examples are a good idea because "you have the receipts" if the interviewer decides to change things.
+- **Pseudocode**
+    - Write pseudocode of each of the steps
