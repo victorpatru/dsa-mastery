@@ -68,6 +68,7 @@ async function main() {
     testResults.push(runTest('Solution - Test 13: with numbers "a1b2c3"', 'a1b2c3', 6, solution));
     testResults.push(runTest('Solution - Test 14: with special chars "!@#$%"', '!@#$%', 5, solution));
     testResults.push(runTest('Solution - Test 15: mixed "ab!@ab"', 'ab!@ab', 4, solution));
+    testResults.push(runTest('Solution - Test 16: "qrsvbspk"', 'qrsvbspk', 5, solution));
 
     // Big O Complexity Validation
     const complexityValidations = [];
