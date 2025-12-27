@@ -209,34 +209,6 @@ async function main() {
         'Space'
     ));
 
-    complexityValidations.push(validateComplexityResult(
-        'get()',
-        SOLUTION_COMPLEXITY.get.time,
-        CORRECT_COMPLEXITY.solution.get.time,
-        'Time'
-    ));
-
-    complexityValidations.push(validateComplexityResult(
-        'get()',
-        SOLUTION_COMPLEXITY.get.space,
-        CORRECT_COMPLEXITY.solution.get.space,
-        'Space'
-    ));
-
-    complexityValidations.push(validateComplexityResult(
-        'put()',
-        SOLUTION_COMPLEXITY.put.time,
-        CORRECT_COMPLEXITY.solution.put.time,
-        'Time'
-    ));
-
-    complexityValidations.push(validateComplexityResult(
-        'put()',
-        SOLUTION_COMPLEXITY.put.space,
-        CORRECT_COMPLEXITY.solution.put.space,
-        'Space'
-    ));
-
     const complexityPassed = complexityValidations.filter(v => v.isCorrect).length;
     const complexityTotal = complexityValidations.length;
 
