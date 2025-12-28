@@ -8,8 +8,10 @@ class Solution {
         const ROWS = matrix.length, COLS = matrix[0].length;
 
         let top = 0, bot = ROWS - 1, row = null
+
         while (top <= bot) {
             const midRow = bot + Math.floor((top - bot) / 2);
+
             if (target > matrix[midRow].at(-1)) {
                 top = midRow + 1;
             } else if (target < matrix[midRow][0]) {
@@ -23,8 +25,10 @@ class Solution {
         if (row === null) return false
 
         let l = 0, r = COLS - 1;
+
         while (l <= r) {
             const m = l + Math.floor((r - l) / 2);
+
             if (target > matrix[row][m]) {
                 l = m + 1;
             } else if (target < matrix[row][m]) {
