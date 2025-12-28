@@ -7,7 +7,7 @@ class Solution {
     searchMatrix(matrix, target) {
         const ROWS = matrix.length, COLS = matrix[0].length;
 
-        let top = 0, bot = ROWS - 1;
+        let top = 0, bot = ROWS - 1, row = null
         while (top <= bot) {
             const midRow = bot + Math.floor((top - bot) / 2);
             if (target > matrix[midRow].at(-1)) {
@@ -15,14 +15,13 @@ class Solution {
             } else if (target < matrix[midRow][0]) {
                 bot = midRow - 1;
             } else {
+                row = midRow
                 break;
             }
         }
 
-        if (!(top <= bot)) {
-            return false;
-        }
-        const row = bot + Math.floor((top - bot) / 2);
+        if (row === null) return false
+
         let l = 0, r = COLS - 1;
         while (l <= r) {
             const m = l + Math.floor((r - l) / 2);
