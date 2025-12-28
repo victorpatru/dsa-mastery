@@ -6,6 +6,7 @@ const { renderTestResults } = require('../../utils/testRenderer.js');
 function runTest(testName, operations, expected) {
     let results = []
     let error = null
+    let operationLog = []
     
     try {
         let arr = null
@@ -16,18 +17,31 @@ function runTest(testName, operations, expected) {
 
             if (method === 'Array') {
                 // Constructor call
-                arr = new DynamicArray(operations[i + 1])
+                const capacity = operations[i + 1]
+                arr = new DynamicArray(capacity)
+                operationLog.push(`new DynamicArray(${capacity})`)
                 results.push(null)
                 i += 2
             } else if (method === 'set') {
                 // set takes two arguments: index and value
-                arr.set(operations[i + 1], operations[i + 2])
+                const index = operations[i + 1]
+                const value = operations[i + 2]
+                arr.set(index, value)
+                operationLog.push(`set(${index}, ${value})`)
                 results.push(null)
                 i += 3
             } else {
                 // Other methods take one argument (or null for no args)
                 const arg = operations[i + 1]
-                results.push(arr[method](arg))
+                let result
+                if (arg === null) {
+                    result = arr[method]()
+                    operationLog.push(`${method}() -> ${result}`)
+                } else {
+                    result = arr[method](arg)
+                    operationLog.push(`${method}(${arg}) -> ${result}`)
+                }
+                results.push(result)
                 i += 2
             }
         }
@@ -35,6 +49,7 @@ function runTest(testName, operations, expected) {
         const passed = JSON.stringify(results) === JSON.stringify(expected)
         if (!passed) {
             error = {
+                Operations: operationLog.join(' | '),
                 Expected: JSON.stringify(expected),
                 Got: JSON.stringify(results)
             };
@@ -49,6 +64,7 @@ function runTest(testName, operations, expected) {
             name: testName,
             passed: false,
             error: {
+                Operations: operationLog.join(' | '),
                 Expected: JSON.stringify(expected),
                 Error: e.message,
                 Stack: e.stack
