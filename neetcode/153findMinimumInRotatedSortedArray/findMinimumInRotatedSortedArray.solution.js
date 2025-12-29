@@ -4,8 +4,7 @@ class Solution {
      * @return {number}
      */
     findMin(nums) {
-        let l = 0;
-        let r = nums.length - 1;
+        let l = 0, r = nums.length - 1;
         let res = nums[0];
 
         while (l <= r) {
