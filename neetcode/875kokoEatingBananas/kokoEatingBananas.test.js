@@ -1,5 +1,5 @@
 // Import the solutions
-const { Solution, SOLUTION_COMPLEXITY } = require('./kokoEatingBananas.solution.js');
+const { Solution, SOLUTION_COMPLEXITY } = require('./kokoEatingBananas.template.js');
 
 // Import shared Big O validation utilities
 const { validateComplexityResult } = require('../../utils/bigOValidator.js');

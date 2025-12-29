@@ -12,8 +12,8 @@ class Solution {
             const k = l + Math.floor((r - l) / 2);
 
             let hours = 0;
-            for (const p of piles) {
-                hours += Math.ceil(p / k);
+            for (const pile of piles) {
+                hours += Math.ceil(pile / k);
             }
             if (hours <= h) {
                 res = Math.min(res, k);
