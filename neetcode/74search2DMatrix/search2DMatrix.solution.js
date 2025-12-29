@@ -7,15 +7,15 @@ class Solution {
     searchMatrix(matrix, target) {
         const ROWS = matrix.length, COLS = matrix[0].length;
 
-        let top = 0, bot = ROWS - 1, row = null
+        let bot = 0, top = ROWS - 1, row = null
 
-        while (top <= bot) {
-            const midRow = top + Math.floor((bot - top) / 2);
+        while (bot <= top) {
+            const midRow = bot + Math.floor((top - bot) / 2);
 
             if (target > matrix[midRow].at(-1)) {
-                top = midRow + 1;
+                bot = midRow + 1;
             } else if (target < matrix[midRow][0]) {
-                bot = midRow - 1;
+                top = midRow - 1;
             } else {
                 row = midRow
                 break;
