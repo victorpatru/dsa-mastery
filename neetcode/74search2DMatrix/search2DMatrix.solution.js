@@ -42,13 +42,13 @@ class Solution {
 }
 
 /**
- * Time Complexity: O(log(m * n)) where m is the number of rows and n is the number of columns.
- * We perform binary search twice: first to find the correct row (O(log m)), then to find the target
- * in that row (O(log n)). Overall O(log m + log n) = O(log(m * n)).
+ * Time Complexity: O(log(n * m)) where n is the number of rows and m is the number of columns.
+ * We perform binary search twice: first to find the correct row (O(log n)), then to find the target
+ * in that row (O(log m)). Overall O(log n + log m) = O(log(n * m)).
  * Space Complexity: O(1) as we only use a constant amount of extra space for variables.
  */
 const SOLUTION_COMPLEXITY = {
-    time: 'O(log(m*n))',
+    time: 'O(log(n*m))',
     space: 'O(1)'
 };
 
