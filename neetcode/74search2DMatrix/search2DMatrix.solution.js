@@ -10,7 +10,7 @@ class Solution {
         let top = 0, bot = ROWS - 1, row = null
 
         while (top <= bot) {
-            const midRow = bot + Math.floor((top - bot) / 2);
+            const midRow = top + Math.floor((bot - top) / 2);
 
             if (target > matrix[midRow].at(-1)) {
                 top = midRow + 1;
