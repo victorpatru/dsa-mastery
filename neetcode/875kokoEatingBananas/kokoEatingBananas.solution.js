@@ -33,7 +33,7 @@ class Solution {
  * Space Complexity: O(1) as we only use a constant amount of extra space for variables.
  */
 const SOLUTION_COMPLEXITY = {
-    time: 'O(nlog(m))',
+    time: 'O(nlogm)',
     space: 'O(1)'
 };
 
