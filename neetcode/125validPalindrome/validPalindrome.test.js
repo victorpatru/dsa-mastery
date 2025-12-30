@@ -2,7 +2,7 @@
 const {
     Solution,
     SOLUTION_COMPLEXITY
-} = require('./validPalindrome.solution.js');
+} = require('./validPalindrome.template.js');
 
 // Import shared Big O validation utilities
 const { validateComplexityResult } = require('../../utils/bigOValidator.js');
