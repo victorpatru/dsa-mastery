@@ -25,39 +25,8 @@
  * - 1 <= s.length <= 1000
  * - s is made up of only printable ASCII characters.
  *
- * Solution 1: Reverse String approach
  */
-class SolutionReverseString {
-    /**
-     * Check if a character is alphanumeric
-     * @param {char} c
-     * @return {boolean}
-     */
-    isAlphanumeric(c) {
-        // TODO: Implement
-    }
-
-    /**
-     * @param {string} s
-     * @return {boolean}
-     */
-    isPalindrome(s) {
-        // TODO: Implement
-    }
-}
-
-/**
- * TODO: Fill in your Big O analysis below
- */
-const SOLUTION_REVERSE_STRING_COMPLEXITY = {
-    time: '',
-    space: ''
-};
-
-/**
- * Solution 2: Two Pointers approach
- */
-class SolutionTwoPointers {
+class Solution {
     /**
      * @param {string} s
      * @return {boolean}
@@ -78,7 +47,7 @@ class SolutionTwoPointers {
 /**
  * TODO: Fill in your Big O analysis below
  */
-const SOLUTION_TWO_POINTERS_COMPLEXITY = {
+const SOLUTION_COMPLEXITY = {
     time: '',
     space: ''
 };
@@ -86,10 +55,8 @@ const SOLUTION_TWO_POINTERS_COMPLEXITY = {
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
-        SolutionReverseString,
-        SolutionTwoPointers,
-        SOLUTION_REVERSE_STRING_COMPLEXITY,
-        SOLUTION_TWO_POINTERS_COMPLEXITY
+        Solution,
+        SOLUTION_COMPLEXITY
     };
 }
 

@@ -1,42 +1,5 @@
-// Solution 1: Reverse String approach
-class SolutionReverseString {
-    /**
-     * Check if a character is alphanumeric
-     * @param {char} char
-     * @return {boolean}
-     */
-    isAlphanumeric(char) {
-        return (
-            (char >= 'a' && char <= 'z') ||
-            (char >= 'A' && char <= 'Z') ||
-            (char >= '0' && char <= '9')
-        );
-    }
-
-    /**
-     * @param {string} s
-     * @return {boolean}
-     */
-    isPalindrome(s) {
-        let newStr = '';
-
-        for (let c of s) {
-            if (this.isAlphanumeric(c)) {
-                newStr += c.toLowerCase();
-            }
-        }
-
-        return newStr === newStr.split('').reverse().join('');
-    }
-}
-
-/**
- * Time Complexity: O(n)
- * Space Complexity: O(n)
- */
-
-// Solution 2: Two Pointers approach
-class SolutionTwoPointers {
+// Solution: Two Pointers approach
+class Solution {
     /**
      * @param {string} s
      * @return {boolean}
@@ -79,9 +42,13 @@ class SolutionTwoPointers {
  * Time Complexity: O(n)
  * Space Complexity: O(1)
  */
+const SOLUTION_COMPLEXITY = {
+    time: 'O(n)',
+    space: 'O(1)'
+};
 
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { SolutionReverseString, SolutionTwoPointers };
+    module.exports = { Solution, SOLUTION_COMPLEXITY };
 }
 

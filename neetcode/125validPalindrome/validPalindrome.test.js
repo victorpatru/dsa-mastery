@@ -1,10 +1,8 @@
 // Import the solutions
 const {
-    SolutionReverseString,
-    SolutionTwoPointers,
-    SOLUTION_REVERSE_STRING_COMPLEXITY,
-    SOLUTION_TWO_POINTERS_COMPLEXITY
-} = require('./validPalindrome.template.js');
+    Solution,
+    SOLUTION_COMPLEXITY
+} = require('./validPalindrome.solution.js');
 
 // Import shared Big O validation utilities
 const { validateComplexityResult } = require('../../utils/bigOValidator.js');
@@ -12,14 +10,8 @@ const { renderTestResults } = require('../../utils/testRenderer.js');
 
 // Correct Big O answers for validation
 const CORRECT_COMPLEXITY = {
-    reverseString: {
-        time: 'O(n)', // Due to string concatenation in loop
-        space: 'O(n)'   // For the new string
-    },
-    twoPointers: {
-        time: 'O(n)',   // Single pass through string
-        space: 'O(1)'   // Only using pointers
-    }
+    time: 'O(n)',   // Single pass through string
+    space: 'O(1)'   // Only using pointers
 };
 
 // Test helper function
@@ -57,72 +49,40 @@ function runTest(testName, s, expected, solution) {
 
 // Run all tests
 async function main() {
-    const solutionReverseString = new SolutionReverseString();
-    const solutionTwoPointers = new SolutionTwoPointers();
+    const solution = new Solution();
     const testResults = [];
 
-    // Test SolutionReverseString
-    testResults.push(runTest('SolutionReverseString - Test 1: example 1 - "Was it a car or a cat I saw?"', 'Was it a car or a cat I saw?', true, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 2: example 2 - "tab a cat"', 'tab a cat', false, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 3: simple palindrome', 'racecar', true, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 4: not a palindrome', 'hello', false, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 5: single character', 'a', true, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 6: two characters - palindrome', 'aa', true, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 7: two characters - not palindrome', 'ab', false, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 8: palindrome with numbers', 'a1b2b1a', true, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 9: not palindrome with numbers', 'a1b2c3', false, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 10: palindrome with spaces and punctuation', 'A man, a plan, a canal: Panama', true, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 11: case insensitive', 'RaceCar', true, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 12: only numbers - palindrome', '12321', true, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 13: only numbers - not palindrome', '12345', false, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 14: mixed alphanumeric with special characters', 'Madam, I\'m Adam', true, solutionReverseString));
-    testResults.push(runTest('SolutionReverseString - Test 15: all special characters', '!@#$%^&*()', true, solutionReverseString));
-
-    // Test SolutionTwoPointers
-    testResults.push(runTest('SolutionTwoPointers - Test 1: example 1 - "Was it a car or a cat I saw?"', 'Was it a car or a cat I saw?', true, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 2: example 2 - "tab a cat"', 'tab a cat', false, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 3: simple palindrome', 'racecar', true, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 4: not a palindrome', 'hello', false, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 5: single character', 'a', true, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 6: two characters - palindrome', 'aa', true, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 7: two characters - not palindrome', 'ab', false, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 8: palindrome with numbers', 'a1b2b1a', true, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 9: not palindrome with numbers', 'a1b2c3', false, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 10: palindrome with spaces and punctuation', 'A man, a plan, a canal: Panama', true, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 11: case insensitive', 'RaceCar', true, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 12: only numbers - palindrome', '12321', true, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 13: only numbers - not palindrome', '12345', false, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 14: mixed alphanumeric with special characters', 'Madam, I\'m Adam', true, solutionTwoPointers));
-    testResults.push(runTest('SolutionTwoPointers - Test 15: all special characters', '!@#$%^&*()', true, solutionTwoPointers));
+    // Test Solution
+    testResults.push(runTest('Solution - Test 1: example 1 - "Was it a car or a cat I saw?"', 'Was it a car or a cat I saw?', true, solution));
+    testResults.push(runTest('Solution - Test 2: example 2 - "tab a cat"', 'tab a cat', false, solution));
+    testResults.push(runTest('Solution - Test 3: simple palindrome', 'racecar', true, solution));
+    testResults.push(runTest('Solution - Test 4: not a palindrome', 'hello', false, solution));
+    testResults.push(runTest('Solution - Test 5: single character', 'a', true, solution));
+    testResults.push(runTest('Solution - Test 6: two characters - palindrome', 'aa', true, solution));
+    testResults.push(runTest('Solution - Test 7: two characters - not palindrome', 'ab', false, solution));
+    testResults.push(runTest('Solution - Test 8: palindrome with numbers', 'a1b2b1a', true, solution));
+    testResults.push(runTest('Solution - Test 9: not palindrome with numbers', 'a1b2c3', false, solution));
+    testResults.push(runTest('Solution - Test 10: palindrome with spaces and punctuation', 'A man, a plan, a canal: Panama', true, solution));
+    testResults.push(runTest('Solution - Test 11: case insensitive', 'RaceCar', true, solution));
+    testResults.push(runTest('Solution - Test 12: only numbers - palindrome', '12321', true, solution));
+    testResults.push(runTest('Solution - Test 13: only numbers - not palindrome', '12345', false, solution));
+    testResults.push(runTest('Solution - Test 14: mixed alphanumeric with special characters', 'Madam, I\'m Adam', true, solution));
+    testResults.push(runTest('Solution - Test 15: all special characters', '!@#$%^&*()', true, solution));
 
     // Big O Complexity Validation
     const complexityValidations = [];
 
     complexityValidations.push(validateComplexityResult(
-        'SolutionReverseString',
-        SOLUTION_REVERSE_STRING_COMPLEXITY.time,
-        CORRECT_COMPLEXITY.reverseString.time,
+        'Solution',
+        SOLUTION_COMPLEXITY.time,
+        CORRECT_COMPLEXITY.time,
         'Time'
     ));
 
     complexityValidations.push(validateComplexityResult(
-        'SolutionReverseString',
-        SOLUTION_REVERSE_STRING_COMPLEXITY.space,
-        CORRECT_COMPLEXITY.reverseString.space,
-        'Space'
-    ));
-
-    complexityValidations.push(validateComplexityResult(
-        'SolutionTwoPointers',
-        SOLUTION_TWO_POINTERS_COMPLEXITY.time,
-        CORRECT_COMPLEXITY.twoPointers.time,
-        'Time'
-    ));
-
-    complexityValidations.push(validateComplexityResult(
-        'SolutionTwoPointers',
-        SOLUTION_TWO_POINTERS_COMPLEXITY.space,
-        CORRECT_COMPLEXITY.twoPointers.space,
+        'Solution',
+        SOLUTION_COMPLEXITY.space,
+        CORRECT_COMPLEXITY.space,
         'Space'
     ));
 
