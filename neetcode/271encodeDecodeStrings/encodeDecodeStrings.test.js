@@ -8,8 +8,8 @@ const { renderTestResults } = require('../../utils/testRenderer.js');
 // Correct Big O answers for validation
 const CORRECT_COMPLEXITY = {
     solution: {
-        time: 'O(n)', // m = sum of lengths of all strings
-        space: 'O(n+m)' // m = sum of lengths, n = number of strings
+        time: 'O(m)', // m = total length of all strings combined
+        space: 'O(1)' // auxiliary space only (not counting input/output)
     }
 };
 

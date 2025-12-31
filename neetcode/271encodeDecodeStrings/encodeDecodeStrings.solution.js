@@ -35,13 +35,21 @@ class Solution {
 }
 
 /**
- * Time Complexity: O(n) for each encode() and decode() function calls.
- * Space Complexity: O(n+m) for each encode() and decode() function calls.
- * Where m is the sum of lengths of all the strings and n is the number of strings.
+ * Time Complexity: O(m) where m is the total length of all strings combined.
+ * - encode(): O(m) to iterate through all characters in all strings
+ * - decode(): O(m) to parse through the encoded string
+ * 
+ * Space Complexity: O(1) auxiliary space (not counting input/output).
+ * - We only use a few variables (i, j, length) for tracking positions
+ * - Note: The output (encoded string or decoded array) is not counted as auxiliary space
  */
+const SOLUTION_COMPLEXITY = {
+    time: 'O(m)',
+    space: 'O(1)'
+};
 
 // Export for testing
 if (typeof module !== "undefined" && module.exports) {
-    module.exports = { Solution };
+    module.exports = { Solution, SOLUTION_COMPLEXITY };
 }
 
