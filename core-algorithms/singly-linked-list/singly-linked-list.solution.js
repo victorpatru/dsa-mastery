@@ -16,16 +16,12 @@ class LinkedList {
      * @return {number}
      */
     get(index) {
-        let i = 0
         let curr = this.dummyHead.next
-        while (curr) {
-            if (i === index) {
-                return curr.val
-            }
-            i++
+        while (curr && index > 0) {
             curr = curr.next
+            index--
         }
-        return -1
+        return curr ? curr.val : -1
     }
 
     /**
@@ -55,16 +51,15 @@ class LinkedList {
      * @return {boolean}
      */
     remove(index) {
-        let i = 0
         let curr = this.dummyHead
 
-        while (i < index && curr) {
-            i++
+        while (curr && index > 0) {
             curr = curr.next
+            index--
         }
 
         if (curr && curr.next) {
-            if (curr.next == this.dummyTail) {
+            if (curr.next === this.dummyTail) {
                 this.dummyTail = curr
             }
             curr.next = curr.next.next
