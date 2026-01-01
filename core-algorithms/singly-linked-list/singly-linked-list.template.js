@@ -29,7 +29,7 @@
  * The index int i provided to get(int i) and remove(int i) is guaranteed to be greater than or equal to 0.
  */
 class ListNode {
-    constructor(val, nextNode = null) {
+    constructor(val = -1, nextNode = null) {
         this.val = val
         this.next = nextNode
     }
