@@ -1,5 +1,5 @@
 class ListNode {
-    constructor(val, nextNode = null) {
+    constructor(val = -1, nextNode = null) {
         this.val = val
         this.next = nextNode
     }
@@ -7,7 +7,7 @@ class ListNode {
 
 class LinkedList {
     constructor() {
-        this.dummyHead = new ListNode(-1)
+        this.dummyHead = new ListNode()
         this.dummyTail = this.dummyHead
     }
 
