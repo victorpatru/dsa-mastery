@@ -1,3 +1,5 @@
+const { Deque } = require('../../helpers/Deque.js');
+
 /**
  * Definition for a binary tree node.
  */
@@ -52,26 +54,26 @@ class SolutionBFS {
      * @return {number}
      */
     maxDepth(root) {
-        const q = [];
-        if (root !== null) {
-            q.push(root);
+        if (!root) return 0;
+
+        const stack = new Deque();
+        stack.pushBack([root, 1]); // [node, depth]
+
+        let max = 0;
+
+        while (!stack.isEmpty()) {
+            const [node, depth] = stack.popBack();
+
+            max = Math.max(max, depth);
+
+            const { left, right } = node;
+
+            // push children (right first so left is processed first, if you care)
+            if (right) stack.pushBack([right, depth + 1]);
+            if (left) stack.pushBack([left, depth + 1]);
         }
 
-        let level = 0;
-        while (q.length > 0) {
-            const size = q.length;
-            for (let i = 0; i < size; i++) {
-                const node = q.shift();
-                if (node.left !== null) {
-                    q.push(node.left);
-                }
-                if (node.right !== null) {
-                    q.push(node.right);
-                }
-            }
-            level++;
-        }
-        return level;
+        return max;
     }
 }
 
