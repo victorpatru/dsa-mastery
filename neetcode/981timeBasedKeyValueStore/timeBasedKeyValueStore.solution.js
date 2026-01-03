@@ -29,7 +29,7 @@ class TimeMap {
         let result = '';
 
         while (left <= right) {
-            const mid = Math.floor((left + right) / 2);
+            const mid = left + Math.floor((right - left) / 2);
             if (values[mid][1] <= timestamp) {
                 result = values[mid][0];
                 left = mid + 1;
